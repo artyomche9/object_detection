@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ObjectDetection</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <%= nav_bar static: :top, brand: "Object Detection" do %>
+        <%= menu_group do %>
+          <%= menu_item "Home", root_path %>
+          <%= menu_item "Images", images_path %>
+          <%= menu_item "Upload", new_image_path %>
+          <%= menu_item "Logout", destroy_user_session_path, method: :delete %>
+        <% end %>
+      <% end %>
+      <div class="row">
+        <div class="col">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
